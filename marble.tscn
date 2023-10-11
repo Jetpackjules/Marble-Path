@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1og85wv8a2vp"]
+
+[ext_resource type="Texture2D" uid="uid://crornii5gv4ox" path="res://addons/kenney_prototype_textures/green/texture_08.png" id="1_48eax"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rt5eh"]
+friction = 0.67
+bounce = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prpjf"]
+albedo_color = Color(0.701961, 0.701961, 0.701961, 1)
+albedo_texture = ExtResource("1_48eax")
+albedo_texture_force_srgb = true
+clearcoat_enabled = true
+clearcoat = 0.1
+clearcoat_roughness = 1.0
+anisotropy_enabled = true
+anisotropy = 1.0
+ao_light_affect = 0.52
+
+[sub_resource type="SphereMesh" id="SphereMesh_ecys7"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w6ncu"]
+radius = 0.25
+
+[node name="Marble" type="RigidBody3D"]
+collision_layer = 3
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_rt5eh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_prpjf")
+mesh = SubResource("SphereMesh_ecys7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_w6ncu")

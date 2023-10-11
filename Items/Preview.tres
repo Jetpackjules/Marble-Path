@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvo2d4ap8gle0"]
+
+[resource]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.0509804, 1, 0.333333, 0.298039)
+point_size = 72.3
