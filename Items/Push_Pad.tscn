@@ -44,7 +44,7 @@ size = Vector3(1.5, 0.1, 1.5)
 [sub_resource type="BoxMesh" id="BoxMesh_nptmw"]
 size = Vector3(1.8, 0.05, 1.8)
 
-[node name="Push_Pad" type="Node3D" groups=["Item"]]
+[node name="Push_Pad" type="Node3D" groups=["item"]]
 script = ExtResource("1_iaoh2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

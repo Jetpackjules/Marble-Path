@@ -33,13 +33,17 @@ func _input(event):
 		if event.is_action_pressed("left_click"):
 			place_item()
 		# If right mouse button is clicked, cycle to the next scene
-		elif event.is_action_pressed("mouse_middle_click"):
+		elif event.is_action_pressed("cycle_item"):
 			cycle_scene(1)
 		elif event.is_action_pressed("scroll_up"):
 			supplimental_rotation += deg_to_rad(15)
 			
 		elif event.is_action_pressed("scroll_down"):
 			supplimental_rotation -= deg_to_rad(15)
+#	Needs to be one layer down to interact with placed items:
+	elif event.is_action_pressed("mouse_middle_click"):
+		remove_item()
+		
 
 
 func _physics_process(delta):
@@ -66,7 +70,7 @@ func _physics_process(delta):
 	elif preview_item:
 		preview_item.visible = false
 
-func get_mouse_click_pos(normal: bool = false):
+func get_mouse_click_pos(extra: bool = false, collider: bool = false):
 	var space_state = get_world_3d().direct_space_state
 	var camera = get_parent()
 	var mouse_pos = get_viewport().get_mouse_position()
@@ -75,9 +79,14 @@ func get_mouse_click_pos(normal: bool = false):
 
 	var ray_array = get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(ray_origin, ray_end))
 	
-	if ray_array.has("position") and ray_array.has("collider"):
+	if ray_array.has("position"):
+		if collider:
+			var test = ray_array["collider"].owner
+			return ray_array["collider"].owner
+			
 		if ray_array["collider"].get_parent().get_name().find("tile") != -1:
-			if normal:
+			if extra:
+				print(ray_array["collider"].get_parent())
 				return [ray_array["position"], ray_array["normal"]]
 			return ray_array["position"]
 	
@@ -102,7 +111,11 @@ func create_item(Item):
 	Item_Instance.look_at(target, placing_pos[1])
 	change_mesh_material(Item_Instance, preview_material, false)
 	return Item_Instance
-	
+
+func remove_item():
+	var item = get_mouse_click_pos(false, true)
+	if item.is_in_group("item"):
+		item.queue_free()
 	
 func change_mesh_material(instanced_scene, material: StandardMaterial3D, collision: bool) -> void:
 	if instanced_scene is MeshInstance3D:
