@@ -86,7 +86,6 @@ func get_mouse_click_pos(extra: bool = false, collider: bool = false):
 			
 		if ray_array["collider"].get_parent().get_name().find("tile") != -1:
 			if extra:
-				print(ray_array["collider"].get_parent())
 				return [ray_array["position"], ray_array["normal"]]
 			return ray_array["position"]
 	
@@ -133,4 +132,3 @@ func cycle_scene(direction):
 	preview_item.queue_free()
 	preview_item = create_item(scenes[current_scene_index])
 	
-	print(scenes[current_scene_index])
