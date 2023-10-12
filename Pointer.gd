@@ -113,8 +113,9 @@ func create_item(Item):
 
 func remove_item():
 	var item = get_mouse_click_pos(false, true)
-	if item.is_in_group("item"):
-		item.queue_free()
+	if item:
+		if item.is_in_group("item"):
+			item.queue_free()
 	
 func change_mesh_material(instanced_scene, material: StandardMaterial3D, collision: bool) -> void:
 	if instanced_scene is MeshInstance3D:
