@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgh51yyfcxmj5"]
+[gd_scene load_steps=13 format=3 uid="uid://dgh51yyfcxmj5"]
 
 [ext_resource type="Script" path="res://Items/Rotator_Platform.gd" id="1_lfiob"]
 [ext_resource type="Material" uid="uid://cp6jeysr1txt5" path="res://Items/Default_Material.tres" id="2_qwea2"]
@@ -46,6 +46,15 @@ size = Vector3(1.8, 0.3, 0.05)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4y73y"]
 size = Vector3(1.8, 0.3, 0.05)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_18v2e"]
+height = 0.3
+radius = 0.1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nj3qe"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.3
 
 [node name="Rotator_Platform" type="Node3D" groups=["item"]]
 script = ExtResource("1_lfiob")
@@ -106,6 +115,15 @@ shape = SubResource("BoxShape3D_dh63n")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Rotator_Platform_Moving/CollisionShape3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.70004e-05, 0)
 mesh = SubResource("BoxMesh_4y73y")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Rotator_Platform_Moving"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("CylinderShape3D_18v2e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rotator_Platform_Moving/CollisionShape3D4"]
+transform = Transform3D(-0.000203653, 0, -1, 0, 1, 0, 1, 0, -0.000203653, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nj3qe")
+skeleton = NodePath("../../..")
 
 [connection signal="mouse_entered" from="Rotator_Platform_Moving" to="." method="_on_rotator_platform_moving_mouse_entered"]
 [connection signal="mouse_exited" from="Rotator_Platform_Moving" to="." method="_on_rotator_platform_moving_mouse_exited"]

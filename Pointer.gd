@@ -119,7 +119,7 @@ func remove_item():
 		print(item.get_groups())
 		if item.is_in_group("item") or item.is_in_group("marble"):
 			item.queue_free()
-	
+
 func change_mesh_material(instanced_scene, material: StandardMaterial3D, collision: bool) -> void:
 	if instanced_scene is MeshInstance3D:
 		instanced_scene.material_override = material
