@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var anim_body: AnimatableBody3D = $Rotator_Platform_Moving
-@onready var label: Label3D = $Rotator_Platform_Moving/Power_Label
+@onready var label: Label3D = $Power_Label
 @onready var mesh: MeshInstance3D = $Rotator_Platform_Moving/Rotation_Platform
 
 @export var Rotation_Speed: int = 1

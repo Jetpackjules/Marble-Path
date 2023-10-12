@@ -24,7 +24,7 @@ height = 0.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_w6ncu"]
 radius = 0.25
 
-[node name="Marble" type="RigidBody3D"]
+[node name="Marble" type="RigidBody3D" groups=["marble"]]
 collision_layer = 3
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_rt5eh")

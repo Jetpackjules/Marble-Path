@@ -81,8 +81,10 @@ func get_mouse_click_pos(extra: bool = false, collider: bool = false):
 	
 	if ray_array.has("position"):
 		if collider:
-			var test = ray_array["collider"].owner
-			return ray_array["collider"].owner
+			if ray_array["collider"].owner:
+				var test = ray_array["collider"].owner
+				return ray_array["collider"].owner
+			return ray_array["collider"]
 			
 		if ray_array["collider"].get_parent().get_name().find("tile") != -1:
 			if extra:
@@ -114,7 +116,8 @@ func create_item(Item):
 func remove_item():
 	var item = get_mouse_click_pos(false, true)
 	if item:
-		if item.is_in_group("item"):
+		print(item.get_groups())
+		if item.is_in_group("item") or item.is_in_group("marble"):
 			item.queue_free()
 	
 func change_mesh_material(instanced_scene, material: StandardMaterial3D, collision: bool) -> void:
