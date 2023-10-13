@@ -1,15 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cew2silgnl4jy"]
+[gd_scene load_steps=5 format=3 uid="uid://cew2silgnl4jy"]
 
-[ext_resource type="PackedScene" uid="uid://cifqm2xdlxa27" path="res://map_1.tscn" id="2_6gd5n"]
-[ext_resource type="Script" path="res://Camera_Point.gd" id="3_foc4t"]
-[ext_resource type="Script" path="res://addons/goutte.camera.trackball/trackball_camera.gd" id="4_rhtxq"]
-[ext_resource type="Script" path="res://Pointer.gd" id="5_dupuw"]
-[ext_resource type="Script" path="res://Cursor.gd" id="7_i1dhy"]
+[ext_resource type="PackedScene" uid="uid://cifqm2xdlxa27" path="res://Level_1.tscn" id="2_6gd5n"]
+[ext_resource type="PackedScene" uid="uid://t1oodhi42p8e" path="res://Pan_Camera.tscn" id="3_i7tyq"]
 [ext_resource type="PackedScene" uid="uid://cj43cbfsww645" path="res://marble_spawner.tscn" id="8_myynd"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_yrlwt"]
-radius = 0.1
-height = 0.2
+[sub_resource type="Environment" id="Environment_276t7"]
+background_mode = 1
+background_color = Color(0, 0.807843, 0.533333, 1)
 
 [node name="Test Level" type="Node3D"]
 
@@ -17,23 +14,14 @@ height = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6.75, -1.5)
 
 [node name="Map2" parent="." instance=ExtResource("2_6gd5n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -6.5, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -0.5)
 
-[node name="Camera_Point" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, -0.5, -1.25)
-script = ExtResource("3_foc4t")
-
-[node name="TrackballCamera" type="Camera3D" parent="Camera_Point"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 12.32)
-script = ExtResource("4_rhtxq")
-stabilize_horizon = true
-action_enabled = false
-
-[node name="RayCast3D" type="RayCast3D" parent="Camera_Point/TrackballCamera"]
-script = ExtResource("5_dupuw")
+[node name="Camera_Point" parent="." instance=ExtResource("3_i7tyq")]
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.933013, -0.258819, 0.25, -0.258819, -4.2222e-08, 0.965926, -0.25, -0.965926, -0.0669874, 0, 7, 0)
+visible = false
 light_energy = 2.778
 shadow_enabled = true
 shadow_bias = 2.12
@@ -41,14 +29,10 @@ shadow_blur = 1.11
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.75, -0.5, -0.433013, 0.5, -3.78552e-08, 0.866025, -0.433013, -0.866025, 0.25, 0, 7, -6)
+visible = false
 light_energy = 2.778
 shadow_bias = 2.12
 shadow_blur = 1.11
 
-[node name="Cursor" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0, 0)
-visible = false
-script = ExtResource("7_i1dhy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor"]
-mesh = SubResource("SphereMesh_yrlwt")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_276t7")

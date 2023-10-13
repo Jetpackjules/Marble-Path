@@ -103,15 +103,24 @@ data = PackedVector3Array(-0.1066, 2.915, -0.0388, -0.585, 1.7414, -0.1032, -0.5
 
 [node name="Map1" instance=ExtResource("1_no16b")]
 
+[node name="tileLow_forest" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, 1.35422, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileLow_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileLow_forest/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_bxmi2")
 
+[node name="tileSlopeLowHigh_forest" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.35422, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeLowHigh_forest/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_cn3pk")
+
+[node name="tileSlopeLowHigh_forest2" parent="." index="2"]
+transform = Transform3D(-1, 1.19209e-07, 1.05529e-07, 1.19209e-07, 1, 1.81058e-08, -1.05529e-07, 1.81059e-08, -1, -4, 1.35423, -1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest2" index="0"]
 
@@ -119,11 +128,17 @@ shape = SubResource("ConvexPolygonShape3D_cn3pk")
 transform = Transform3D(1, -1.91069e-15, 0, -1.91069e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_fvnr5")
 
+[node name="tileHigh_forest" parent="." index="3"]
+transform = Transform3D(-1, 1.19209e-07, 1.05529e-07, 1.19209e-07, 1, 1.81058e-08, -1.05529e-07, 1.81059e-08, -1, -2, 0.354226, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest/StaticBody3D" index="0"]
 transform = Transform3D(1, -1.91069e-15, 0, -1.91069e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ds8gh")
+
+[node name="tileSlopeLowHigh_forest3" parent="." index="4"]
+transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, -2, 0.354226, -3)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest3" index="0"]
 
@@ -131,11 +146,17 @@ shape = SubResource("ConvexPolygonShape3D_ds8gh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.19789e-21, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_6bwfc")
 
+[node name="tileSlopeLowHigh_forest4" parent="." index="5"]
+transform = Transform3D(0, 4.21468e-08, 1, 4.21468e-08, 1, -4.21468e-08, -1, 4.21468e-08, 0, -2, 0.354226, 1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest4" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeLowHigh_forest4/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -7.48678e-23, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_2eewg")
+
+[node name="tileSlopeLowHigh_forest5" parent="." index="6"]
+transform = Transform3D(0, 4.21468e-08, 1, 4.21468e-08, 1, -4.21468e-08, -1, 4.21468e-08, 0, 1.43051e-06, 0.354225, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest5" index="0"]
 
@@ -143,20 +164,32 @@ shape = SubResource("ConvexPolygonShape3D_2eewg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -7.48678e-23, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jk4rf")
 
+[node name="tileHigh_forest2" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.35422, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest2/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_imxnq")
+
+[node name="tileHigh_forest3" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.645774, 3)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest3" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest3/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_pdsef")
 
+[node name="tileHigh_forest4" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.645774, -5)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest4" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest4/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_kl8qy")
+
+[node name="tileSlopeLowHigh_forest6" parent="." index="10"]
+transform = Transform3D(0, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 0, 1.43051e-06, 0.354225, -3)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest6" index="0"]
 
@@ -164,56 +197,89 @@ shape = SubResource("ConvexPolygonShape3D_kl8qy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.19789e-21, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ll0hx")
 
+[node name="tileSlopeLowHigh_forest7" parent="." index="11"]
+transform = Transform3D(-1, 1.19209e-07, 1.05529e-07, 1.19209e-07, 1, 1.81058e-08, -1.05529e-07, 1.81059e-08, -1, 1.43051e-06, -0.645775, 3)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest7" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeLowHigh_forest7/StaticBody3D" index="0"]
 transform = Transform3D(1, -1.91069e-15, 0, -1.91069e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_xe5di")
 
+[node name="tileHigh_forest5" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.645776, -3)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest5" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest5/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_k6qb8")
+
+[node name="tileHigh_forest6" parent="." index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.645776, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest6" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest6/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_8st2p")
 
+[node name="tileHigh_forest7" parent="." index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.645776, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest7" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest7/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_jo1na")
+
+[node name="tileLarge_forest" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.545775, -1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileLarge_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileLarge_forest/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_nrdxe")
 
+[node name="tileLow_forest2" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.454225, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileLow_forest2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileLow_forest2/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_cyyiw")
+
+[node name="tileSlopeLowMedium_forest" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.0457773, -1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowMedium_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeLowMedium_forest/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_dbo1a")
 
+[node name="tileMedium_forest" parent="." index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1.94578, -1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileMedium_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileMedium_forest/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_6qisr")
+
+[node name="tileMedium_forest2" parent="." index="19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1.94578, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileMedium_forest2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileMedium_forest2/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_yob2t")
 
+[node name="tileMedium_forest3" parent="." index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1.94578, -3)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileMedium_forest3" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileMedium_forest3/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_fbffb")
+
+[node name="tileSlopeLowHigh_forest8" parent="." index="21"]
+transform = Transform3D(-1, 1.19209e-07, 1.05529e-07, 1.19209e-07, 1, 1.81058e-08, -1.05529e-07, 1.81059e-08, -1, 1.43051e-06, -0.645775, -5)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_forest8" index="0"]
 
@@ -221,10 +287,16 @@ shape = SubResource("ConvexPolygonShape3D_fbffb")
 transform = Transform3D(1, -1.91069e-15, 0, -1.91069e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_6bss3")
 
+[node name="tileHigh_forest8" parent="." index="22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.64578, -5)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest8" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest8/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_wwfxn")
+
+[node name="tileSlopeLowMedium_forest2" parent="." index="23"]
+transform = Transform3D(0, 4.21468e-08, 1, 4.21468e-08, 1, -4.21468e-08, -1, 4.21468e-08, 0, 4, -1.14578, -5)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowMedium_forest2" index="0"]
 
@@ -232,10 +304,16 @@ shape = SubResource("ConvexPolygonShape3D_wwfxn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -7.48678e-23, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_m3xvf")
 
+[node name="tileHigh_forest9" parent="." index="24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 2, -1.64578, 3)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest9" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest9/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_mgeoy")
+
+[node name="tileSlopeLowMedium_forest3" parent="." index="25"]
+transform = Transform3D(0, 1.68587e-07, 1, -8.42937e-08, 1, -1.68587e-07, 1, 8.42937e-08, 0, 4, -1.14578, 3)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowMedium_forest3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.19789e-21, 1, 0, 0, 0)
@@ -243,6 +321,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.19789e-21, 1, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeLowMedium_forest3/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.19789e-21, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_1jn26")
+
+[node name="flag_teamRed" parent="." index="26"]
+transform = Transform3D(2.98023e-07, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 2.98023e-07, 4, -0.545776, -1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="flag_teamRed" index="0"]
 
@@ -258,20 +339,32 @@ shape = SubResource("ConvexPolygonShape3D_r0fem")
 transform = Transform3D(1, 0, 0, 0, 1, -3.30024e-15, 2.84217e-14, -3.30024e-15, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_uyr7o")
 
+[node name="tree_forest" parent="." index="27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.35422, 1)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tree_forest" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_forest/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_qfy75")
+
+[node name="tree_forest2" parent="." index="28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.35422, -3)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree_forest2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_forest2/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_gibmh")
 
+[node name="tree_forest3" parent="." index="29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.454225, -3)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="tree_forest3" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_forest3/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_xhcef")
+
+[node name="tree_forest4" parent="." index="30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.454225, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree_forest4" index="0"]
 

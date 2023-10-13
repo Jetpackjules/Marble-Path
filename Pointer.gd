@@ -1,7 +1,6 @@
 extends RayCast3D
 
-# Reference to the marker
-@onready var marker = Global.cursor
+
 #var push_pad = preload("res://Push_Pad.tscn")
 var scenes = []  # List to store all the scenes
 var current_scene_index = 0  # Index to keep track of the currently selected scene
@@ -14,10 +13,13 @@ var preview_item = null
 var preview_material = preload("res://Items/Preview.tres")
 var default_material = preload("res://Items/Default_Material.tres")
 
-
+var marker
 func _ready():
-	# Load all scenes from a certain folder
+#	Making Cursor/Marker:
+	marker = Marker3D.new()
+	get_tree().get_root().add_child(marker)
 	
+	# Load all scenes from items folder
 	var dir = DirAccess.open("res://Items/")
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
@@ -50,7 +52,7 @@ func _physics_process(delta):
 	var pos = get_mouse_click_pos(true)
 	if pos:
 		var cursor_pos = pos[0]
-		Global.cursor.global_position = cursor_pos
+		marker.global_position = cursor_pos
 		if preview_item:
 			preview_item.visible = true
 			preview_item.global_position = cursor_pos
