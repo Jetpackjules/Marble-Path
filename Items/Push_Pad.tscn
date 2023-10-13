@@ -1,7 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp7eeotcl5gf5"]
+[gd_scene load_steps=12 format=3 uid="uid://cp7eeotcl5gf5"]
 
 [ext_resource type="Script" path="res://Items/Push_Pad.gd" id="1_iaoh2"]
 [ext_resource type="Material" uid="uid://cp6jeysr1txt5" path="res://Items/Default_Material.tres" id="2_81lvn"]
+
+[sub_resource type="Animation" id="Animation_wv761"]
+resource_name = "Push"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ee8q1"]
 resource_name = "Push"
@@ -22,6 +38,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ba252"]
 _data = {
+"Push": SubResource("Animation_wv761"),
 "Spin": SubResource("Animation_ee8q1")
 }
 

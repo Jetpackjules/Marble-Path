@@ -17,7 +17,8 @@ var marker
 func _ready():
 #	Making Cursor/Marker:
 	marker = Marker3D.new()
-	get_tree().get_root().add_child(marker)
+#	get_tree().get_root().
+	add_child(marker)
 	
 	# Load all scenes from items folder
 	var dir = DirAccess.open("res://Items/")
@@ -102,16 +103,17 @@ func place_item():
 
 func create_item(Item):
 	var Item_Instance = Item.instantiate()
-	var placing_pos: Array = get_mouse_click_pos(true)
-	Item_Instance.global_position = placing_pos[0]
+#	var placing_pos: Array = get_mouse_click_pos(true)
+#	Item_Instance.global_position = placing_pos[0]
 	
-	var reference_forward = Vector3.FORWARD
-	var projected_forward = reference_forward - placing_pos[1] * reference_forward.dot(placing_pos[1])
-	var target = placing_pos[0] + projected_forward.normalized()
-	Item_Instance.look_at(target, placing_pos[1])
+#	var reference_forward = Vector3.FORWARD
+#	var projected_forward = reference_forward - placing_pos[1] * reference_forward.dot(placing_pos[1])
+#	var target = placing_pos[0] + projected_forward.normalized()
+#	Item_Instance.look_at(target, placing_pos[1])
 	
-	get_tree().get_root().add_child(Item_Instance)
-	Item_Instance.look_at(target, placing_pos[1])
+#	get_tree().get_root().
+	get_tree().get_current_scene().add_child(Item_Instance)
+#	Item_Instance.look_at(target, placing_pos[1])
 	change_mesh_material(Item_Instance, preview_material, false)
 	return Item_Instance
 

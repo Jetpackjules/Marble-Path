@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cj43cbfsww645"]
 
-[ext_resource type="Script" path="res://marble_spawner.gd" id="1_2en6k"]
+[ext_resource type="Script" path="res://Marble/marble_spawner.gd" id="1_2en6k"]
 
 [node name="Marble_Spawner" type="Node3D"]
 script = ExtResource("1_2en6k")

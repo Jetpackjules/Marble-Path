@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcmyiykfxif5q"]
+
+[ext_resource type="PackedScene" uid="uid://fnp4v086nclx" path="res://Environments/Level_Environment.tscn" id="1_7i5o0"]
+[ext_resource type="PackedScene" uid="uid://dreqka52q0ufp" path="res://Camera/Camera.tscn" id="3_1ffd4"]
+[ext_resource type="PackedScene" uid="uid://cj43cbfsww645" path="res://Marble/marble_spawner.tscn" id="4_1chom"]
+[ext_resource type="PackedScene" uid="uid://cifqm2xdlxa27" path="res://Map1.tscn" id="4_8h2tf"]
+[ext_resource type="PackedScene" uid="uid://dpc2aubtlnw44" path="res://levels/Level_Flag/Flag.tscn" id="5_tsr16"]
+
+[node name="Level_1" type="Node3D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_7i5o0")]
+
+[node name="Camera" parent="." instance=ExtResource("3_1ffd4")]
+
+[node name="Marble_Spawner" parent="." instance=ExtResource("4_1chom")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5.75, -1)
+
+[node name="Map1" parent="." instance=ExtResource("4_8h2tf")]
+
+[node name="Level_Flag" parent="." instance=ExtResource("5_tsr16")]
+transform = Transform3D(2.98023e-07, 1.68587e-07, -1, -8.42937e-08, 1, 1.68587e-07, 1, 8.42937e-08, 2.98023e-07, 4, -0.5, -1)

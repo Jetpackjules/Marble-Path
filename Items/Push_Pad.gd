@@ -3,7 +3,7 @@ extends Node3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var push_pad: AnimatableBody3D = $Push_Pad_Moving
 @onready var label: Label3D = $Push_Pad_Moving/Power_Label
-@onready var mesh: MeshInstance3D = $Push_Pad_Moving/Bounce_Pad
+#@onready var mesh: MeshInstance3D = $Push_Pad_Moving/Bounce_Pad
 
 @export var Push_Speed: int = 8
 

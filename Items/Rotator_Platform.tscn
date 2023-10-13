@@ -75,7 +75,6 @@ font_size = 224
 outline_size = 77
 
 [node name="Rotator_Platform_Moving" type="AnimatableBody3D" parent="."]
-transform = Transform3D(-0.000203653, 0, 1, 0, 1, 0, -1, 0, -0.000203653, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_ic1yk")
 sync_to_physics = false
 
