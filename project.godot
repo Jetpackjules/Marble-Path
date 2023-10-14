@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="Marble Path"
-run/main_scene="res://levels/Level_1.tscn"
+run/main_scene="res://levels/Level_3.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Global="*res://Global.gd"
 
 [display]
 
@@ -95,3 +91,7 @@ cycle_item={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":86,"key_label":0,"unicode":118,"echo":false,"script":null)
 ]
 }
+
+[physics]
+
+common/physics_ticks_per_second=80

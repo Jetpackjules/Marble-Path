@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://cp7eeotcl5gf5"]
+
+[ext_resource type="Script" path="res://Items/Push_Pad.gd" id="1_iaoh2"]
+
+[sub_resource type="Animation" id="Animation_ee8q1"]
+resource_name = "Push"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba252"]
+_data = {
+"Push": SubResource("Animation_ee8q1")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mg38t"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2dboq"]
+points = PackedVector3Array(-0.9, -0.025, -0.9, -0.9, 0.025, -0.9, 0.9, -0.025, -0.9, -0.9, -0.025, 0.9, -0.9, 0.025, 0.9, 0.9, 0.025, -0.9, 0.9, -0.025, 0.9, 0.9, 0.025, 0.9)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1ey7g"]
+top_radius = 0.1
+bottom_radius = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g5gvp"]
+radius = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mkhow"]
+size = Vector3(1.5, 0.1, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nptmw"]
+size = Vector3(1.8, 0.05, 1.8)
+
+[node name="Push_Pad" type="Node3D"]
+script = ExtResource("1_iaoh2")
+Push_Speed = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Push_Pad_Moving")
+reset_on_save = false
+speed_scale = 8.0
+libraries = {
+"": SubResource("AnimationLibrary_ba252")
+}
+
+[node name="Power_Label" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0784594, 0)
+text = "99"
+font_size = 224
+outline_size = 77
+
+[node name="Push_Pad_Moving" type="AnimatableBody3D" parent="."]
+disable_mode = 2
+physics_material_override = SubResource("PhysicsMaterial_mg38t")
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Push_Pad_Moving"]
+shape = SubResource("ConvexPolygonShape3D_2dboq")
+
+[node name="Rod" type="MeshInstance3D" parent="Push_Pad_Moving"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.981733, 0)
+mesh = SubResource("CylinderMesh_1ey7g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Push_Pad_Moving"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.981733, 0)
+shape = SubResource("CylinderShape3D_g5gvp")
+
+[node name="Ball_Detection" type="Area3D" parent="Push_Pad_Moving"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0303736, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Push_Pad_Moving/Ball_Detection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.074873, 0)
+shape = SubResource("BoxShape3D_mkhow")
+
+[node name="Bounce_Pad" type="MeshInstance3D" parent="Push_Pad_Moving"]
+mesh = SubResource("BoxMesh_nptmw")
+
+[connection signal="body_entered" from="Push_Pad_Moving/Ball_Detection" to="." method="_on_ball_detection_body_entered"]
