@@ -120,7 +120,6 @@ func create_item(Item):
 func remove_item():
 	var item = get_mouse_click_pos(false, true)
 	if item:
-		print(item.get_groups())
 		if item.is_in_group("item") or item.is_in_group("marble"):
 			item.queue_free()
 
