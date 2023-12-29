@@ -31,7 +31,6 @@ func _on_push_pad_moving_mouse_entered():
 func _on_push_pad_moving_mouse_exited():
 	mouse_over = false
 
-
 func _input(event):
 	if mouse_over:
 		if event.is_action_pressed("scroll_up"):

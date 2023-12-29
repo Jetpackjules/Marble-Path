@@ -66,13 +66,13 @@ size = Vector3(1.8, 0.05, 1.8)
 script = ExtResource("1_iaoh2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Push_Pad_Moving")
 reset_on_save = false
-playback_process_mode = 0
-speed_scale = 8.0
+root_node = NodePath("../Push_Pad_Moving")
+callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_ba252")
 }
+speed_scale = 8.0
 
 [node name="Push_Pad_Moving" type="AnimatableBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_mg38t")
